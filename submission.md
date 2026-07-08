@@ -1,3 +1,21 @@
+# AI Usage
+
+### Example 1: Issue #1
+
+- I asked Claude how to reproduce a Sunday-only bug without waiting for Sunday. It suggested calling update_listening_streak() directly in the flask shell with hardcoded Saturday/Sunday datetimes.
+- It verified that today.weekday() != 6 when I suspected it as the root cause and explained that Python's weekday() returns 6 for Sunday, causing it to be skipped.
+
+### Example 2: Issue #4 
+
+- I asked Claude to help me understand why add_to_playlist() worked but rate_song() didn't send a notification. It pointed me to compare the two functions side by side and that's when I saw that rate_song() didn't have any notification call.
+- It gave me the code block to add, modeled on the pattern already used in add_to_playlist().
+- I verified the fix by running the rating curl command, then checking the sharer's notifications endpoint and confirming the "song_rated" notification appeared with the correct body text.
+
+### Example 3: Polishing submission.md
+
+- I asked claude to help me format parts of my Root Cause Analyses especially when there were code snippets involved.
+- I gave it a roughly written version of what I wanted to say and it added formatting to make it easier to look at.
+  
 # Codebase Map 
 
 ## Files and Responsibilities
